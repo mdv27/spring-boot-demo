@@ -11,6 +11,8 @@ Spring boot mvc example for:
     - Return remaining.
     -  Use streams
     
+![image](https://user-images.githubusercontent.com/12114755/104114141-0ce38780-5327-11eb-8b0a-62aca542cf3b.png)    
+
 ### Auth microservice
 
 stores user details in memory and provides both authorization and authentication through social media like google and facebook. There should be sign in/sign up processes and I want to see user data in afterwards via REST endpoints.
