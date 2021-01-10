@@ -5,6 +5,8 @@ Spring boot mvc example for:
 
  - POST api to accept list of strings and return the longest string from it. Use streams.
 
+![image](https://user-images.githubusercontent.com/12114755/104113772-dad02680-5322-11eb-8237-fe9a754236b1.png)
+
  - DELETE api to accept list of strings and remove all the string which is having length more than 10.
     - Return remaining.
     -  Use streams
