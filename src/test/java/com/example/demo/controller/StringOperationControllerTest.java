@@ -55,4 +55,22 @@ public class StringOperationControllerTest {
         assertEquals("application/json", annotation.consumes()[0]);
         assertEquals("application/json", annotation.produces()[0]);
     }
+
+    @Test
+    public void shouldCallFilterInputOnDeleteStrings() {
+        List<String> input = asList("testString1");
+        stringOperationController.deleteStrings(input);
+        verify(stringOperationService).filterInput(input);
+    }
+
+    @Test
+    public void shouldDeleteStrings() {
+        List<String> input = asList("testString1");
+        List<String> expected = asList("filteredstring");
+
+        when(stringOperationService.filterInput(anyList())).thenReturn(expected);
+
+        List<String> actual = stringOperationController.deleteStrings(input);
+        assertEquals(expected, actual);
+    }
 }

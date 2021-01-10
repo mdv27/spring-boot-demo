@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.StringOperationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,5 +19,10 @@ public class StringOperationController {
     @PostMapping(path = "/strings", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public String getLongestString(@RequestBody List<String> input) {
       return stringOperationService.getLongestString(input);
+    }
+
+    @DeleteMapping(path = "/strings", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    public List<String> deleteStrings(@RequestBody List<String> input) {
+        return stringOperationService.filterInput(input);
     }
 }
